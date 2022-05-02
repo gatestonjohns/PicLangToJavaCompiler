@@ -28,16 +28,16 @@ To use this compiler, complete the following steps:
 Additional Notes
 ----------------
 
-**PicLangGrammar.txt** denotes the grammar for this language. An example piece of code and its output can be seen below:
+**PicLangGrammar.txt** denotes the grammar for this language. Unfortunately, for the purposes of portability, I was not able to set up function arguments. All variables must be initialized within the function by either a literal or a read ('<-') from console. (Enter an image by passing web URL. Enter a color by passing a space separated list of 3 integers (0-255).
+
+
+An example piece of code and its output can be seen below:
 
 ```
 void testImagetoFile()
-                   int size = 500;
-				   image[size,size] f;
-				   f[x,y] = <<x,x,x>>%<<256,256,256>> +  <<y,y,y>>%<<256,256,256>>;
-				   write f -> console;
-				   write f -> "testImagetoFile";
-				   boolean done <- console;
-           
+	int size = 500;
+	image[size,size] f;
+	f[x,y] = <<x,x,x>>%<<256,256,256>> + <<y,y,y>>%<<256,256,256>>;
+   	write f -> console;
 ```
 
