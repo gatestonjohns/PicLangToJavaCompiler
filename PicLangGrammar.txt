@@ -1,0 +1,64 @@
+Program::=
+	(Type  | 'void') IDENT '(' (NameDef ( ',' NameDef)* )? ')'
+	(  Declaration ';'     |    Statement ';'  )*                                    
+
+NameDef::=
+	Type IDENT |                                      
+	Type Dimension IDENT                     
+
+Declaration::=
+	NameDef (('=' | '<-') Expr)?                 
+
+Expr::=
+    ConditionalExpr | LogicalOrExpr    
+
+ConditionalExpr ::=
+    'if' '(' Expr ')' Expr 'else'  Expr 'fi'
+
+LogicalOrExpr ::=
+    LogicalAndExpr ( '|' LogicalAndExpr)*
+
+LogicalAndExpr ::=
+    ComparisonExpr ( '&'  ComparisonExpr)*
+
+ComparisonExpr ::=
+    AdditiveExpr ( ('<' | '>' | '==' | '!=' | '<=' | '>=') AdditiveExpr)*
+
+AdditiveExpr ::=
+    MultiplicativeExpr ( ('+'|'-') MultiplicativeExpr )*
+
+MultiplicativeExpr ::=
+    UnaryExpr (('*'|'/' | '%') UnaryExpr)*
+
+UnaryExpr ::=
+        ('!'|'-'| COLOR_OP | IMAGE_OP) UnaryExpr  |
+             UnaryExprPostfix
+
+UnaryExprPostfix::=
+    PrimaryExpr PixelSelector?
+
+PrimaryExpr ::=
+    BOOLEAN_LIT |
+    STRING_LIT |
+    INT_LIT |    
+    FLOAT_LIT |
+    IDENT |
+    '(' Expr ')' |
+   ColorConst |                                             
+   '<<' Expr ',' Expr ',' Expr '>>' |                 
+   'console'                                               
+
+PixelSelector::=
+    '[' Expr ',' Expr ']'
+
+Dimension::=
+	'[' Expr ',' Expr ']'                           
+
+
+Statement::=
+	IDENT PixelSelector? '=' Expr |        
+	IDENT PixelSelector? ‘<-’ Expr |     
+           'write' Expr '->' Expr |                
+	'^' Expr                                       
+
+
