@@ -41,3 +41,4 @@ void testImagetoFile()
    	write f -> console;
 ```
 
+![image](https://user-images.githubusercontent.com/68303855/166309068-90677f7e-264b-4d6d-aeec-30df23c2a9a2.png)
