@@ -20,8 +20,8 @@ To use this compiler, complete the following steps:
 2. In this folder of your choice, place a '.txt' file with ONLY the PicLang "code" to be converted and compiled (should be in same directory folder as 'edu').
 
 3. Navigate to the folder from extraction in the command line. Run the following 
-'''
-javac edu/ufl/cise/plc/*.java edu/ufl/cise/plc/runtime/*.java edu/ufl/cise/plc/ast/*.java
 
-java edu/ufl/cise/plc/run.java
-'''
+**javac edu/ufl/cise/plc/*.java edu/ufl/cise/plc/runtime/*.java edu/ufl/cise/plc/ast/*.java**
+
+**java edu/ufl/cise/plc/run.java**
+
