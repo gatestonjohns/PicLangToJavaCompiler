@@ -25,3 +25,19 @@ To use this compiler, complete the following steps:
 
 **java edu/ufl/cise/plc/run.java**
 
+Additional Notes
+----------------
+
+**PicLangGrammar.txt** denotes the grammar for this language. An example piece of code and its output can be seen below:
+
+```
+void testImagetoFile()
+                   int size = 500;
+				   image[size,size] f;
+				   f[x,y] = <<x,x,x>>%<<256,256,256>> +  <<y,y,y>>%<<256,256,256>>;
+				   write f -> console;
+				   write f -> "testImagetoFile";
+				   boolean done <- console;
+           
+```
+
