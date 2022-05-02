@@ -21,9 +21,11 @@ To use this compiler, complete the following steps:
 
 3. Navigate to the folder from extraction in the command line. Run the following 
 
-**javac edu/ufl/cise/plc/\*.java edu/ufl/cise/plc/runtime/\*.java edu/ufl/cise/plc/ast/\*.java**
+```
+javac edu/ufl/cise/plc/*.java edu/ufl/cise/plc/runtime/*.java edu/ufl/cise/plc/ast/*.java
 
-**java edu/ufl/cise/plc/run.java**
+java edu/ufl/cise/plc/run.java
+```
 
 Additional Notes
 ----------------
